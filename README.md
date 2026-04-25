@@ -61,55 +61,15 @@ Active Workers
 Pending Requests
 Blocked Users
 Employer & Labour count
+
 📁 Project Structure
 
 labour_hub/
-├── src/
-│   ├── auth/                      # Authentication & authorization
-│   │   ├── AuthContext.jsx       # Auth state management
-│   │   └── RequireAuth.jsx       # Protected route component
-│   ├── components/
-│   │   ├── cards/                # Reusable card components
-│   │   │   ├── StatCard.tsx      # Statistics display card
-│   │   │   └── WorkerCard.tsx    # Worker profile card
-│   │   └── common/               # Shared components
-│   │       ├── Footer.tsx
-│   │       └── Header.tsx
-│   ├── data/
-│   │   └── mockData.js           # Mock data for development
-│   ├── layout/
-│   │   ├── AdminLayout.jsx       # Admin page layout
-│   │   └── Navbar.jsx            # Navigation component
-│   ├── pages/
-│   │   ├── Dashboard.tsx         # Main dashboard page
-│   │   ├── FindLabour.tsx        # Worker search page
-│   │   ├── auth/
-│   │   │   └── Login.jsx         # Login page
-│   │   ├── dashboard/            # Admin dashboard sub-pages
-│   │   │   ├── ActiveWorkers.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Employers.jsx
-│   │   │   ├── PendingApprovals.jsx
-│   │   │   ├── PlatformStatus.jsx
-│   │   │   ├── RecentRegistrations.jsx
-│   │   │   ├── SimilarWorkers.jsx
-│   │   │   └── TotalUsers.jsx
-│   │   └── users/
-│   │       └── UserManagement.jsx # User admin interface
-│   ├── routes/
-│   │   └── AppRoutes.jsx         # Route configuration
-│   ├── App.jsx                   # Main App component
-│   ├── main.jsx                  # Application entry point
-│   └── index.css                 # Global styles
-├── public/                        # Static assets
-├── package.json                   # Project dependencies
-├── vite.config.js                # Vite configuration
-├── tailwind.config.js            # Tailwind CSS configuration
-├── tsconfig.json                 # TypeScript configuration
-├── eslint.config.js              # ESLint rules
-├── postcss.config.js             # PostCSS configuration
-└── index.html                    # HTML entry point
-```
+├── frontend/
+├── backend/
+├── screenshots/
+├── README.md
+└── .gitignore
 
 🏠 Dashboard
 
