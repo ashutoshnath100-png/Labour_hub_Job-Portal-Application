@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💼 Labour Hub - Worker Management Platform
 **Developed & Maintained by:**
 
@@ -298,3 +299,7 @@ For support or questions regarding the Labour Hub platform, please contact:
 ---
 
 **Last Updated:** January 2026
+=======
+# Labour_hub_Job-Portal-Application
+MERN stack job portal connecting employers with workers, featuring real-time hiring, admin dashboard, and automated reminder &amp; warning system.
+>>>>>>> 7d820b1086b690bdaca735d00b5e20d44c460c93
