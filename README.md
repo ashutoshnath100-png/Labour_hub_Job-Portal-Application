@@ -1,73 +1,68 @@
-<<<<<<< HEAD
-# 💼 Labour Hub - Worker Management Platform
-**Developed & Maintained by:**
+🚀 Labour Hub – MERN Job Portal Application
 
-BrainTech Technology Pvt Ltd
+📌 Project Overview
 
-**Copyright © 2026 BrainTech Technology Pvt Ltd. All Rights Reserved.**
+Labour Hub is a full-stack MERN application that connects employers with skilled workers. Employers can send job requests, and workers can accept or reject them.
 
-</div>
+The system tracks worker behavior and automatically triggers reminders, warnings, and blocking actions for inactive users.
 
-A comprehensive web application for managing labor and worker resources efficiently. This platform connects employers with workers and provides advanced management features for administrators.
+It also includes a powerful Admin Dashboard for managing users, monitoring activity, sending WhatsApp notifications, and exporting reports.
 
-## 📋 Overview
+🎯 Core Features
 
-Labour Hub is a full-featured worker management system built with modern web technologies. It facilitates the connection between employers seeking workers and workers looking for opportunities, with administrative oversight and user management capabilities.
+👨‍💼 Employer
 
-## ✨ Key Features
+Send job requests
+Track worker responses
+Manage hiring workflow
+👷 Worker
 
-### 🔐 Authentication & Authorization
-- Secure user login system
-- Role-based access control
-- Protected routes for authenticated users
-- Session management
+Accept / Reject job requests
+View assigned jobs
+🛡️ Admin (Main Highlight)
 
-### 👥 Worker Management
-- Browse and search available workers
-- View detailed worker profiles
-- Worker registration and verification
-- Similar worker recommendations
+Manage all users
+Dashboard analytics
+Send Reminder / Warning
+Block inactive users
+Export reports (CSV / PDF)
+WhatsApp Notification system
+⚙️ Smart Automation System Ignored Jobs Action 1 📌 Missed Job 2 🔔 Reminder 3 ⚠️ Warning 4+ 🚫 Block User 👉 Built using MongoDB aggregation + backend logic
 
-### 📊 Admin Dashboard
-- Comprehensive dashboard with real-time statistics
-- Active workers tracking
-- Pending approvals management
-- Recent registrations monitoring
-- Platform status overview
-- Employer management
-- User management interface
+🛠️ Tech Stack
 
-### 🏢 User Management
-- User profile management
-- Role-based permissions
-- User activity tracking
-- Account status management
+Frontend
 
-### 📱 Responsive UI
-- Mobile-friendly design
-- Clean and intuitive interface
-- Statistics cards for quick insights
-- Organized navigation
+React.js
+Tailwind CSS
+Axios
+Backend
 
-## 🛠️ Technology Stack
+Node.js
+Express.js
+Database
 
-### Frontend Framework
-- **React 19.2.0** - UI library
-- **Vite 7.2.4** - Build tool and dev server
-- **React Router DOM 7.12.0** - Client-side routing
+MongoDB
+Tools
 
-### Styling
-- **Tailwind CSS 3.4.17** - Utility-first CSS framework
-- **PostCSS 8.5.6** - CSS processing
+JWT Authentication
+REST APIs
+Postman
+WhatsApp Cloud API
+🔐 Authentication
 
-### Development Tools
-- **TypeScript** - Type-safe JavaScript
-- **ESLint** - Code quality and consistency
-- **Babel/SWC** - JavaScript transpilation
+JWT-based authentication
+Protected routes
+Middleware-based security
+📊 Admin Dashboard Includes
 
-## 📁 Project Structure
+Total Users
+Active Workers
+Pending Requests
+Blocked Users
+Employer & Labour count
+📁 Project Structure
 
-```
 labour_hub/
 ├── src/
 │   ├── auth/                      # Authentication & authorization
@@ -116,190 +111,82 @@ labour_hub/
 └── index.html                    # HTML entry point
 ```
 
-## 🚀 Getting Started
+🏠 Dashboard
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn package manager
+"Dashboard" (./screenshots/dashboard.png)Screenshot_25-4-2026_135515_localhost
 
-### Installation
+👥 User Management
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd labour_hub
-   ```
+"Users" (./screenshots/users.png)Screenshot_25-4-2026_135718_localhost
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+⚠️ Reminder System
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-   The application will be available at `http://localhost:5173`
+"Reminder" (./screenshots/reminder.png)Screenshot_25-4-2026_135728_localhost
 
-### Building for Production
+🔌 API Endpoints (Sample)
 
-```bash
-npm run build
-# or
-yarn build
-```
+Auth
 
-The optimized production build will be created in the `dist/` directory.
+"POST /admin/login"
+"POST /admin/google-login"
+Users
 
-### Preview Production Build
+"GET /admin/all-users"
+"GET /admin/user/:id"
+"PUT /admin/all-users/:id/status"
+Automation
 
-```bash
-npm run preview
-# or
-yarn preview
-```
+"POST /admin/send-reminder-bulk"
+"POST /admin/send-warning-bulk"
+"PUT /admin/block-all-inactive"
+⚡ Installation
 
-## 📝 Available Scripts
+Clone Repo
 
-| Command | Description |
-|---------|-------------|
-| `npm run start` | Start development server |
-| `npm run dev` | Development mode with HMR |
-| `npm run build` | Build for production |
-| `npm run lint` | Run ESLint code quality checks |
-| `npm run preview` | Preview production build locally |
+git clone https://github.com/ashutoshnath100-png/Labour_hub_Job-Portal-Application.git cd Labour_hub_Job-Portal-Application
 
-## 🔄 Routing
+Backend
 
-The application uses React Router for client-side routing. Main routes include:
+cd backend npm install npm start/nodemon server.js
 
-- `/` - Login page
-- `/dashboard` - Main dashboard
-- `/find-labour` - Worker search and discovery
-- `/admin/dashboard` - Admin dashboard with various sub-routes
-- `/admin/users` - User management
-- `/admin/active-workers` - Active workers list
-- `/admin/pending-approvals` - Pending worker approvals
-- `/admin/recent-registrations` - New registrations
-- `/admin/platform-status` - Platform statistics
-- `/admin/employers` - Employer management
+Frontend
 
-## 🎨 UI Components
+cd frontend npm install npm run dev
 
-### Reusable Components
-- **StatCard** - Display statistics and metrics
-- **WorkerCard** - Show worker profile information
-- **Header** - Top navigation and branding
-- **Footer** - Application footer
-- **AdminLayout** - Layout wrapper for admin pages
+🔑 Environment Variables
 
-## 📊 Mock Data
+Create ".env" in backend:
 
-The application includes mock data for development purposes. Mock data is stored in `src/data/mockData.js` and can be used to test functionality without a backend.
+PORT=4000 MONGO_URI=your_mongodb_url SECRET_KEY=your_secret WHATSAPP_TOKEN=your_token
 
-## 🔒 Security Features
+🚀 Deployment
 
-- Protected routes requiring authentication
-- Role-based access control (RBAC)
-- Context-based state management for auth
+Layer| Platform Frontend| Vercel Backend| Render Database| MongoDB
 
-## 🌐 Responsive Design
+📈 Future Improvements
 
-The application is fully responsive and built with Tailwind CSS, ensuring:
-- Mobile-first design approach
-- Optimized layouts for all screen sizes
-- Touch-friendly interface elements
+IVR Integration
+Real-time notifications (Socket.io)
+Payment system
+Worker rating system
+Mobile app
+👨‍💻 My Contribution
 
-## 📦 Dependencies Management
+Built Admin Panel (Frontend + Backend)
+Developed REST APIs
+Implemented JWT authentication
+Created automation system (Reminder/Warning/Block)
+Integrated WhatsApp API
+Designed UI using Tailwind CSS
+📬 Contact
 
-All dependencies are pinned to specific versions in `package.json` for stability. Regular updates are recommended for security patches.
+Ashutosh Nath GitHub: https://github.com/ashutoshnath100-png
 
-### Main Dependencies
-- **react** - UI library
-- **react-dom** - React DOM rendering
-- **react-router-dom** - Routing library
-- **tailwindcss** - Styling framework
+⭐ Final Note
 
-### Dev Dependencies
-- **vite** - Build tool
-- **@vitejs/plugin-react** - React plugin for Vite
-- **eslint** - Code linting
-- **TypeScript** - Type safety
+This project demonstrates real-world full-stack development using MERN with automation logic and admin control system.
 
-## 🐛 Development
+Last Updated: April 2026
+Labour_hub_Job-Portal-Application
+MERN stack job portal connecting employers with workers, featuring real-time hiring, admin dashboard, and automated reminder & warning system.
 
-### Code Quality
-- ESLint configuration included for code consistency
-- Support for TypeScript for type safety
-- Prettier integration available (can be added)
-
-### Hot Module Replacement (HMR)
-The development server supports HMR for instant updates during development without full page reload.
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 🤝 Contributing
-
-1. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-2. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-3. Push to the branch (`git push origin feature/AmazingFeature`)
-4. Open a Pull Request
-
-## 📄 License
-
-This project is proprietary and confidential.
-
-**© 2026 BrainTech Technology Pvt Ltd**
-
-This project and all of its contents, including but not limited to code, documentation, and design, are the exclusive intellectual property of **BrainTech Technology Pvt Ltd**. 
-
-### Ownership & Rights
-- **Company:** BrainTech Technology Pvt Ltd
-- **Product:** Labour Hub Worker Management Platform
-- **Copyright:** © 2026 BrainTech Technology Pvt Ltd. All Rights Reserved.
-- **Status:** Proprietary and Confidential
-
-Unauthorized copying, distribution, modification, or use of this project is strictly prohibited without express written permission from BrainTech Technology Pvt Ltd.
-
-For licensing inquiries, please contact: BrainTech Technology Pvt Ltd
-
-## 📞 Support & Contact
-
-For support or questions regarding the Labour Hub platform, please contact:
-
-**BrainTech Technology Pvt Ltd**
-- Official Website: www.braintechtechnology.com
-- Email: support@braintechtechnology.com
-- For internal queries: Contact the development team
-
-## 🎯 Future Enhancements
-
-- [ ] Backend API integration
-- [ ] Real-time notifications
-- [ ] Payment gateway integration
-- [ ] Worker ratings and reviews system
-- [ ] Advanced search filters
-- [ ] Mobile app version
-- [ ] Email verification system
-- [ ] Two-factor authentication
-
-## 📅 Version History
-
-**v0.0.0** - Initial project setup with basic structure and components
-
----
-
-**Last Updated:** January 2026
-=======
-# Labour_hub_Job-Portal-Application
-MERN stack job portal connecting employers with workers, featuring real-time hiring, admin dashboard, and automated reminder &amp; warning system.
->>>>>>> 7d820b1086b690bdaca735d00b5e20d44c460c93
