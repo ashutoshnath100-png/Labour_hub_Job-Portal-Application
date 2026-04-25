@@ -8,145 +8,202 @@ The system tracks worker behavior and automatically triggers reminders, warnings
 
 It also includes a powerful Admin Dashboard for managing users, monitoring activity, sending WhatsApp notifications, and exporting reports.
 
+---
+
 🎯 Core Features
 
 👨‍💼 Employer
 
-Send job requests
-Track worker responses
-Manage hiring workflow
+- Send job requests
+- Track worker responses
+- Manage hiring workflow
+
 👷 Worker
 
-Accept / Reject job requests
-View assigned jobs
+- Accept / Reject job requests
+- View assigned jobs
+
 🛡️ Admin (Main Highlight)
 
-Manage all users
-Dashboard analytics
-Send Reminder / Warning
-Block inactive users
-Export reports (CSV / PDF)
-WhatsApp Notification system
-⚙️ Smart Automation System Ignored Jobs Action 1 📌 Missed Job 2 🔔 Reminder 3 ⚠️ Warning 4+ 🚫 Block User 👉 Built using MongoDB aggregation + backend logic
+- Manage all users
+- Dashboard analytics
+- Send Reminder / Warning
+- Block inactive users
+- Export reports (CSV / PDF)
+- WhatsApp Notification system
+
+---
+
+⚙️ Automation Logic (Key Highlight)
+
+Ignored Jobs| System Action
+1| Missed Job
+2| Reminder
+3| Warning
+4+| Block User
+
+---
 
 🛠️ Tech Stack
 
 Frontend
 
-React.js
-Tailwind CSS
-Axios
+- React.js
+- Tailwind CSS
+- Axios
+
 Backend
 
-Node.js
-Express.js
+- Node.js
+- Express.js
+
 Database
 
-MongoDB
+- MongoDB
+
 Tools
 
-JWT Authentication
-REST APIs
-Postman
-WhatsApp Cloud API
+- JWT Authentication
+- REST APIs
+- Postman
+- WhatsApp Cloud API
+
+---
+
 🔐 Authentication
 
-JWT-based authentication
-Protected routes
-Middleware-based security
+- JWT-based authentication
+- Protected routes
+- Middleware-based security
+
+---
+
 📊 Admin Dashboard Includes
 
-Total Users
-Active Workers
-Pending Requests
-Blocked Users
-Employer & Labour count
+- Total Users
+- Active Workers
+- Pending Requests
+- Blocked Users
+- Employer & Labour count
+
+---
 
 📁 Project Structure
 
 labour_hub/
 ├── frontend/
 ├── backend/
-├── screenshots/
 ├── README.md
 └── .gitignore
 
+---
+
+📸 Screenshots (Add Your Images Here)
+
 🏠 Dashboard
 
-"Dashboard" (./screenshots/dashboard.png)Screenshot_25-4-2026_135515_localhost
+"Dashboard"-  <img width="1763" height="1358" alt="Screenshot_25-4-2026_135515_localhost" src="https://github.com/user-attachments/assets/a2bf511f-5a7d-4b23-bdae-5aa17c34a390" />
+
 
 👥 User Management
 
-"Users" (./screenshots/users.png)Screenshot_25-4-2026_135718_localhost
+"Users"-  <img width="1763" height="1746" alt="Screenshot_25-4-2026_135718_localhost" src="https://github.com/user-attachments/assets/e63a3a2d-3dc2-4785-a731-97d29d4948fb" />
+
 
 ⚠️ Reminder System
 
-"Reminder" (./screenshots/reminder.png)Screenshot_25-4-2026_135728_localhost
+"Reminder"-  <img width="1763" height="805" alt="Screenshot_25-4-2026_135728_localhost" src="https://github.com/user-attachments/assets/39de3cb1-e457-44c5-b86e-ea38d8c5f5fb" />
 
 🔌 API Endpoints (Sample)
 
 Auth
 
-"POST /admin/login"
-"POST /admin/google-login"
+- "POST /admin/login"
+- "POST /admin/google-login"
+
 Users
 
-"GET /admin/all-users"
-"GET /admin/user/:id"
-"PUT /admin/all-users/:id/status"
+- "GET /admin/all-users"
+- "GET /admin/user/:id"
+- "PUT /admin/all-users/:id/status"
+
 Automation
 
-"POST /admin/send-reminder-bulk"
-"POST /admin/send-warning-bulk"
-"PUT /admin/block-all-inactive"
+- "POST /admin/send-reminder-bulk"
+- "POST /admin/send-warning-bulk"
+- "PUT /admin/block-all-inactive"
+
+---
+
 ⚡ Installation
 
 Clone Repo
 
-git clone https://github.com/ashutoshnath100-png/Labour_hub_Job-Portal-Application.git cd Labour_hub_Job-Portal-Application
+git clone https://github.com/ashutoshnath100-png/Labour_hub_Job-Portal-Application.git
+cd Labour_hub_Job-Portal-Application
 
 Backend
 
-cd backend npm install npm start/nodemon server.js
+cd backend
+npm install
+npm start
 
 Frontend
 
-cd frontend npm install npm run dev
+cd frontend
+npm install
+npm run dev
+
+---
 
 🔑 Environment Variables
 
 Create ".env" in backend:
 
-PORT=4000 MONGO_URI=your_mongodb_url SECRET_KEY=your_secret WHATSAPP_TOKEN=your_token
+PORT=4000
+MONGO_URI=your_mongodb_url
+SECRET_KEY=your_secret
+WHATSAPP_TOKEN=your_token
+
+---
 
 🚀 Deployment
 
-Layer| Platform Frontend| Vercel Backend| Render Database| MongoDB
+Layer| Platform
+Frontend| Vercel
+Backend| Render
+Database| MongoDB
+
+---
 
 📈 Future Improvements
 
-IVR Integration
-Real-time notifications (Socket.io)
-Payment system
-Worker rating system
-Mobile app
+- IVR Integration
+- Real-time notifications (Socket.io)
+- Payment system
+- Worker rating system
+- Mobile app
+
+---
+
 👨‍💻 My Contribution
 
-Built Admin Panel (Frontend + Backend)
-Developed REST APIs
-Implemented JWT authentication
-Created automation system (Reminder/Warning/Block)
-Integrated WhatsApp API
-Designed UI using Tailwind CSS
+- Built Admin Panel (Frontend + Backend)
+- Developed REST APIs
+- Implemented JWT authentication
+- Created automation system (Reminder/Warning/Block)
+- Integrated WhatsApp API
+- Designed UI using Tailwind CSS
+
+---
+
 📬 Contact
 
-Ashutosh Nath GitHub: https://github.com/ashutoshnath100-png
+Ashutosh Nath
+GitHub: https://github.com/ashutoshnath100-png
+
+---
 
 ⭐ Final Note
 
 This project demonstrates real-world full-stack development using MERN with automation logic and admin control system.
-
-Last Updated: April 2026
-Labour_hub_Job-Portal-Application
-MERN stack job portal connecting employers with workers, featuring real-time hiring, admin dashboard, and automated reminder & warning system.
-
