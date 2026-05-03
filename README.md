@@ -98,7 +98,6 @@ labour_hub/
 
 ---
 
-📸 Screenshots (Add Your Images Here)
 
 🏠 Dashboard
 
