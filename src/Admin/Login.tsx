@@ -212,7 +212,7 @@ const Login = () => {
           <div className="text-center text-white px-12">
             <h2 className="text-3xl font-bold mb-4 mt-15">Hello, Welcome!</h2>
             <img
-              src="/logo.png"
+              src="./logo.png"
               alt="Labour Hub"
               className="w-40 object-contain mx-auto -mt-5"
             />
