@@ -8,9 +8,6 @@ import { Parser } from "json2csv";
 import PDFDocument from "pdfkit";
 import axios from "axios";
 
-
-
-
 dotenv.config();
 
 
