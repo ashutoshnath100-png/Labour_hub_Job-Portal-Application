@@ -213,10 +213,10 @@ const Login = () => {
             <h2 className="text-3xl font-bold mb-4 mt-15">Hello, Welcome!</h2>
             <img
               src="/logo.png"
-              alt="Urban Force"
+              alt="Labour Hub"
               className="w-40 object-contain mx-auto -mt-5"
             />
-            <h3 className="text-3xl font-semibold -mt-9">Urban Force</h3>
+            <h3 className="text-3xl font-semibold -mt-9">Labour Hub</h3>
             <div className="mt-6 hidden lg:flex justify-center">
               <button
                 type="button"

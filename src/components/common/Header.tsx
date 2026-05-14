@@ -70,7 +70,7 @@ const Header = () => {
               className="h-11 w-11 object-contain"
             />
             <span className="text-xl font-bold text-orange-500">
-              Urban Force
+              Labour Hub
             </span>
           </Link>
 
