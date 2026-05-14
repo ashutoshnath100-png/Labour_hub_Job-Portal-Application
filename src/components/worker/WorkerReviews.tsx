@@ -25,7 +25,7 @@ const WorkerReviews = ({ worker, onReviewAdded, canReview }: Props) => {
 
     try {
       const res = await fetch(
-        `http://localhost:4000/api/reviews/add`,
+        `${import.meta.env.VITE_API_URL}/api/reviews/add`,
         {
           method: "POST",
           headers: {

@@ -13,7 +13,7 @@ const UserProfile = () => {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:4000/admin/user/${id}`,
+        `${import.meta.env.VITE_API_URL}/admin/user/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -36,7 +36,7 @@ const UserProfile = () => {
 
   const updateStatus = async (status: string) => {
     await axios.put(
-      `http://localhost:4000/admin/all-users/${id}/status`,
+      `${import.meta.env.VITE_API_URL}/admin/all-users/${id}/status`,
       { status },
       {
         headers: {

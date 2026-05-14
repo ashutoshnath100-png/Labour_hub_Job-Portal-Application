@@ -40,7 +40,7 @@ const Reports = () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-            `http://localhost:4000/admin/reports?days=${selectedDays}`,
+            `${import.meta.env.VITE_API_URL}/admin/reports?days=${selectedDays}`,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
@@ -61,7 +61,7 @@ const Reports = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-            "http://localhost:4000/admin/reports/exports-csv",
+            `${import.meta.env.VITE_API_URL}/admin/reports/exports-csv`,
             {
                 headers: { Authorization: `Bearer ${token}` },
                 responseType: "blob"
@@ -86,7 +86,7 @@ const Reports = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-            "http://localhost:4000/admin/reports/exports-pdf",
+            `${import.meta.env.VITE_API_URL}/admin/reports/exports-pdf`,
             {
                 headers: { Authorization: `Bearer ${token}` },
                 responseType: "blob"

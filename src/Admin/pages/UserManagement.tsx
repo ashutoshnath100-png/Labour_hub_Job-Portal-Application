@@ -19,7 +19,7 @@ const UserManagement = () => {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:4000/admin/all-users", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/admin/all-users`, {
         headers: { Authorization: `Bearer ${token}` },
         params: {
           status: statusFromUrl !== "all" ? statusFromUrl : undefined,
@@ -39,7 +39,7 @@ const UserManagement = () => {
 
   const updateStatus = async (id: string, status: Status) => {
     try {
-      await axios.put(`http://localhost:4000/admin/all-users/${id}/status`, { status }, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/admin/all-users/${id}/status`, { status }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchUsers();

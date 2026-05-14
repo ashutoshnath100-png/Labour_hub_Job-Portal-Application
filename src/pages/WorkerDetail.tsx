@@ -11,7 +11,7 @@ import SimilarWorkers from "../components/worker/SimilarWorkers";
 import SafetyTips from "../components/worker/SafetyTips";
 import WorkerContactCard from "../components/worker/WorkerContactCard";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 
 const WorkerDetail = () => {
@@ -216,7 +216,7 @@ const WorkerDetail = () => {
                 const token = localStorage.getItem("token");
 
                 const res = await axios.get(
-                    `http://localhost:4000/api/reviews/can-review/${id}`,
+                    `${import.meta.env.VITE_API_URL}/api/reviews/can-review/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

@@ -23,7 +23,7 @@ const RecentRegistrations = () => {
     const fetchRecentUsers = async () => {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:4000/admin/recent-users", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/recent-users`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

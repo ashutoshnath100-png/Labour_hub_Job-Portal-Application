@@ -22,7 +22,7 @@ const AdminProfile = () => {
       return;
     }
 
-    fetch("http://localhost:4000/admin/profile", {
+    fetch(`${import.meta.env.VITE_API_URL}/admin/profile`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ const AdminProfile = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://localhost:4000/admin/profile",
+      `${import.meta.env.VITE_API_URL}/admin/profile`,
       {
         method: "PUT",
         headers: {

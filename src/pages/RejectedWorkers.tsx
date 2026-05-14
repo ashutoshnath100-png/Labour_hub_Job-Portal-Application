@@ -8,7 +8,7 @@ export default function RejectedWorkers() {
         const run = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await fetch("http://localhost:4000/api/hire/employee/rejected", {
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/hire/employee/rejected`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 

@@ -45,7 +45,7 @@ const Landing: React.FC = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/home-stats");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/home-stats`);
         const data = await res.json();
 
         setStats({
@@ -60,7 +60,7 @@ const Landing: React.FC = () => {
     };
     const fetchCategoryCounts = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/category-counts");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/category-counts`);
         const data = await res.json();
         setCategoreyCounts(data?.counts || {});
       } catch (e) {

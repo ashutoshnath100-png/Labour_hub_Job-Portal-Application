@@ -42,9 +42,9 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const reminder = await fetch("http://localhost:4000/admin/reminder-cooldown", { headers: { Authorization: `Bearer ${token}` } })
-    const warning = await fetch("http://localhost:4000/admin/warning-cooldown", { headers: { Authorization: `Bearer ${token}` } })
-    const block = await fetch("http://localhost:4000/admin/block-cooldown", { headers: { Authorization: `Bearer ${token}` } })
+    const reminder = await fetch(`${import.meta.env.VITE_API_URL}/admin/reminder-cooldown`, { headers: { Authorization: `Bearer ${token}` } })
+    const warning = await fetch(`${import.meta.env.VITE_API_URL}/admin/warning-cooldown`, { headers: { Authorization: `Bearer ${token}` } })
+    const block = await fetch(`${import.meta.env.VITE_API_URL}/admin/block-cooldown`, { headers: { Authorization: `Bearer ${token}` } })
 
     const r = await reminder.json()
     const w = await warning.json()
@@ -67,7 +67,7 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const res = await fetch("http://localhost:4000/admin/labour-verification", { headers: { Authorization: `Bearer ${token}` } })
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/labour-verification`, { headers: { Authorization: `Bearer ${token}` } })
 
     const result = await res.json()
 
@@ -81,7 +81,7 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const res = await fetch("http://localhost:4000/admin/send-reminder-bulk", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/send-reminder-bulk`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -104,7 +104,7 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const res = await fetch("http://localhost:4000/admin/send-warning-bulk", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/send-warning-bulk`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -127,7 +127,7 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const res = await fetch(`http://localhost:4000/admin/block-labour/${id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/block-labour/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`
@@ -147,7 +147,7 @@ const LabourVerification = () => {
 
     const token = localStorage.getItem("token")
 
-    const res = await fetch("http://localhost:4000/admin/block-all-inactive", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/block-all-inactive`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` }
     })

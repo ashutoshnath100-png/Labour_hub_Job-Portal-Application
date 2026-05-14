@@ -11,7 +11,7 @@ const ForgotPassword = () => {
   const submit = async (e: any) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:4000/admin/verify-forgot-password", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/verify-forgot-password`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

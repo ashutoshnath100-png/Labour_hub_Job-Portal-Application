@@ -22,7 +22,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
       return;
     }
 
-    const res = await fetch("http://localhost:4000/admin/reset-password-direct", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/reset-password-direct`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...state, password, confirmPassword }),

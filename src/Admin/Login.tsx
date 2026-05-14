@@ -39,7 +39,7 @@ const Login = () => {
       setLoading(true);
 
 
-      const res = await fetch("http://localhost:4000/admin/google-login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/google-login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: response.credential }),
@@ -110,7 +110,7 @@ const Login = () => {
 
 
     try {
-      let res = await fetch("http://localhost:4000/admin/login", {
+      let res = await fetch(`${import.meta.env.VITE_API_URL}/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: identifier, password: form.password }),
@@ -130,7 +130,7 @@ const Login = () => {
       }
 
 
-      res = await fetch("http://localhost:4000/api/labour/login", {
+      res = await fetch(`${import.meta.env.VITE_API_URL}/api/labour/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ identifier, password: form.password }),
@@ -156,7 +156,7 @@ const Login = () => {
       }
 
 
-      res = await fetch("http://localhost:4000/api/employees/login", {
+      res = await fetch(`${import.meta.env.VITE_API_URL}/api/employees/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

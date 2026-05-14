@@ -8,7 +8,7 @@ interface ProfileType {
     phone?: string;
     location?: string;
 }
-const API_URL = "http://localhost:4000/api/employees/profile";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/employees/profile`;
 export default function Profile() {
     const navigate = useNavigate();
 

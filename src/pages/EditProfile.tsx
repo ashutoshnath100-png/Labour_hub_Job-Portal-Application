@@ -31,7 +31,7 @@ export default function EditProfile() {
                     return;
                 }
                 const res = await axios.get(
-                    "http://localhost:4000/api/employees/profile",
+                    `${import.meta.env.VITE_API_URL}/api/employees/profile`,
                     {
                         headers: { Authorization: `Bearer ${token}` }
                     }
@@ -73,7 +73,7 @@ export default function EditProfile() {
             const token = localStorage.getItem("token");
 
             await axios.put(
-                "http://localhost:4000/api/employees/profile",
+                `${import.meta.env.VITE_API_URL}/api/employees/profile`,
                 form,
                 {
                     headers: { Authorization: `Bearer ${token}` }

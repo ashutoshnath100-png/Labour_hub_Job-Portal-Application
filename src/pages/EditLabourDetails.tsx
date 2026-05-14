@@ -35,7 +35,7 @@ export default function EditLabourProfile() {
         if (!token || role !== "labour") return;
 
 
-        const res = await fetch("http://localhost:4000/api/labour/profile", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/labour/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -104,7 +104,7 @@ export default function EditLabourProfile() {
 
 
       await axios.patch(
-        "http://localhost:4000/api/labour/profile",
+        `${import.meta.env.VITE_API_URL}/api/labour/profile`,
         {
           name: profile.name,
           phone: profile.phone,

@@ -28,10 +28,10 @@ const AdminDashboard = () => {
       }
 
       const [statsRes, labourRes] = await Promise.all([
-        fetch("http://localhost:4000/admin/dashboard-stats", {
+        fetch(`${import.meta.env.VITE_API_URL}/admin/dashboard-stats`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:4000/api/labour"),
+        fetch(`${import.meta.env.VITE_API_URL}/api/labour`),
       ]);
 
       if (!statsRes.ok || !labourRes.ok) {
