@@ -147,7 +147,7 @@ const AdminDashboard = () => {
             />
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 w-full min-h-[350px]">
             <UserTypePieChart
               labour={labourCount}
               employers={employers}
