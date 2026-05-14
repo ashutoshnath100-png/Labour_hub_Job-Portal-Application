@@ -55,7 +55,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "*",
+  origin: "labour-hub-job-portal-application.vercel.app",
   credentials: true
 }));
 
