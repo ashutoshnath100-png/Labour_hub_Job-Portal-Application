@@ -75,21 +75,41 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF6F5]">
-      <TopBar />
+  <div className="min-h-screen bg-[#FAF6F5]">
 
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 space-y-8">
+    <TopBar />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 space-y-6">
 
-          <div onClick={() => navigate("/admin/users")} className="cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <StatCard title="Total Users" value={totalUsers} badge="100%" icon="👤" />
+      {/* STATS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div
+          onClick={() => navigate("/admin/users")}
+          className="group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className="rounded-[28px] bg-white border border-[#ececec] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden">
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-orange-50/40 to-transparent pointer-events-none"></div>
+
+            <StatCard
+              title="Total Users"
+              value={totalUsers}
+              badge="100%"
+              icon="👤"
+            />
+
           </div>
+        </div>
 
-          <div
-            onClick={() => navigate("/admin/users?status=accepted&role=labour")}
-            className="cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-          >
+        <div
+          onClick={() => navigate("/admin/users?status=accepted&role=labour")}
+          className="group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className="rounded-[28px] bg-white border border-[#ececec] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden">
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-blue-50/40 to-transparent pointer-events-none"></div>
+
             <StatCard
               title="Active Workers"
               value={activeWorkers}
@@ -100,12 +120,18 @@ const AdminDashboard = () => {
               }
               icon="👥"
             />
-          </div>
 
-          <div
-            onClick={() => navigate("/admin/users?role=employee")}
-            className="cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-          >
+          </div>
+        </div>
+
+        <div
+          onClick={() => navigate("/admin/users?role=employee")}
+          className="group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className="rounded-[28px] bg-white border border-[#ececec] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden">
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-emerald-50/40 to-transparent pointer-events-none"></div>
+
             <StatCard
               title="Employers"
               value={employers}
@@ -116,12 +142,18 @@ const AdminDashboard = () => {
               }
               icon="💼"
             />
-          </div>
 
-          <div
-            onClick={() => navigate("/admin/users?status=pending")}
-            className="cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-          >
+          </div>
+        </div>
+
+        <div
+          onClick={() => navigate("/admin/users?status=pending")}
+          className="group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className="rounded-[28px] bg-white border border-[#ececec] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden">
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-red-50/40 to-transparent pointer-events-none"></div>
+
             <StatCard
               title="Pending Approvals"
               value={pendingApprovals}
@@ -132,40 +164,56 @@ const AdminDashboard = () => {
               }
               icon="⚠️"
             />
+
           </div>
-
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-
-          <div className="lg:col-span-3">
-            <StatusBarChart
-              active={activeWorkers}
-              pending={pendingApprovals}
-              rejected={rejectedUsers}
-              // total={totalUsers}
-            />
-          </div>
-
-          <div className="lg:col-span-2 w-full min-h-[350px]">
-            <UserTypePieChart
-              labour={labourCount}
-              employers={employers}
-            />
-          </div>
-
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <RecentRegistrations />
-          </div>
-          <SideCards pending = {pendingApprovals} />
         </div>
 
       </div>
+
+      {/* CHARTS */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+
+        <div className="lg:col-span-3 rounded-[30px] border border-[#ececec] bg-white/90 backdrop-blur-xl p-4 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300">
+
+          <StatusBarChart
+            active={activeWorkers}
+            pending={pendingApprovals}
+            rejected={rejectedUsers}
+          />
+
+        </div>
+
+        <div className="lg:col-span-2 w-full min-h-[350px] rounded-[30px] border border-[#ececec] bg-white/90 backdrop-blur-xl p-4 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300">
+
+          <UserTypePieChart
+            labour={labourCount}
+            employers={employers}
+          />
+
+        </div>
+
+      </div>
+
+      {/* BOTTOM */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <div className="lg:col-span-2 rounded-[30px] border border-[#ececec] bg-white/90 backdrop-blur-xl p-4 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300">
+
+          <RecentRegistrations />
+
+        </div>
+
+        <div className="rounded-[30px] border border-[#ececec] bg-white/90 backdrop-blur-xl p-4 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300">
+
+          <SideCards pending={pendingApprovals} />
+
+        </div>
+
+      </div>
+
     </div>
-  );
+  </div>
+);
 };
 
 export default AdminDashboard;

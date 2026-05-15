@@ -202,147 +202,317 @@ const Login = () => {
   };
 
 
-  return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-[#c7e7ff] via-[#ffd6a5] to-[#ffb4c6] flex items-center justify-center px-4">
-      <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-[900px] h-auto md:h-[480px]">
-        <div className="hidden md:block absolute left-0 top-0 h-full w-[55%] bg-[#fb923c] rounded-r-[180px]" />
+ return (
+  <div className="min-h-screen w-full bg-gradient-to-br from-[#c7e7ff] via-[#ffd6a5] to-[#ffb4c6] flex items-center justify-center px-4">
 
+    <div className="relative bg-white/80 backdrop-blur-xl rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden w-full max-w-4xl min-h-[580px] border border-white/40">
 
-        <div className="hidden md:flex absolute left-0 top-0 h-full w-[55%] items-center justify-center">
-          <div className="text-center text-white px-12">
-            <h2 className="text-3xl font-bold mb-4 mt-15">Hello, Welcome!</h2>
-            <img
-              src="./logo.png"
-              alt="Labour Hub"
-              className="w-40 object-contain mx-auto -mt-5"
-            />
-            <h3 className="text-3xl font-semibold -mt-9">Labour Hub</h3>
-            <div className="mt-6 hidden lg:flex justify-center">
-              <button
-                type="button"
-                onClick={() => navigate("/Home")}
-                className="bg-orange-700 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
-                Register
-              </button>
+      {/* LEFT SIDE */}
+      <div className="hidden md:flex absolute left-0 top-0 h-full w-[48%] overflow-hidden bg-[#fb923c] rounded-r-[120px]">
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 opacity-95"></div>
+
+        {/* Decorative Shapes */}
+        <div className="absolute top-[-40px] left-[-40px] w-40 h-40 rounded-full border border-white/10"></div>
+        <div className="absolute bottom-[-50px] right-[-50px] w-56 h-56 rounded-full border border-white/10"></div>
+
+        <div className="relative z-10 flex flex-col justify-between h-full w-full px-10 py-12 text-white">
+
+          {/* TOP LOGO */}
+          <div>
+
+            <div className="flex items-center gap-4">
+
+              {/* Logo Box */}
+              <div className="w-16 h-16 rounded-3xl bg-white/15 backdrop-blur-lg border border-white/20 shadow-xl flex items-center justify-center">
+                <span className="text-3xl">⚒️</span>
+              </div>
+
+              <div>
+                <h1 className="text-3xl font-black tracking-tight">
+                  Labour Hub
+                </h1>
+
+                <p className="text-orange-100 text-xs tracking-widest uppercase mt-1">
+                  Smart Job Platform
+                </p>
+              </div>
+
             </div>
+
+            {/* Main Text */}
+            <div className="mt-14">
+
+              <h2 className="text-4xl font-black leading-tight">
+                Find Jobs.
+                <br />
+                Hire Faster.
+              </h2>
+
+              <p className="mt-5 text-sm text-orange-100 leading-relaxed max-w-xs">
+                A modern labour management platform helping employers and workers connect efficiently.
+              </p>
+
+            </div>
+
           </div>
-        </div>
 
+          {/* Bottom Cards */}
+          <div className="space-y-4">
 
-        <div className="relative md:absolute right-0 top-0 w-full md:w-[45%] h-full flex flex-col justify-center px-6 md:px-14 py-10 md:py-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-            Login
-          </h2>
+            <div className="bg-white/10 border border-white/15 backdrop-blur-lg rounded-2xl px-5 py-4 shadow-lg hover:scale-[1.02] transition-all duration-300">
 
+              <div className="flex items-center gap-3">
 
-          <form onSubmit={handleLogin}>
-            <div className="mb-4 relative">
-              <input
-                type="text"
-                placeholder="Email or Phone"
-                value={form.email}
-                onChange={(e) => {
-                  setForm({ ...form, email: e.target.value });
-                  setEmailError("");
-                  setCommonError("");
-                }}
-                className={`w-full bg-gray-100 px-4 py-3 rounded-lg outline-none focus:ring-2 ${emailError ? "border border-red-500 focus:ring-red-200" : "focus:ring-gray-200"
-                  }`}
-              />
-              {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
-              <span className="absolute right-4 top-1/3 -translate-y-1/2 text-gray-500">
-                👤
-              </span>
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  ⚡
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-sm">
+                    Quick Hiring
+                  </h3>
+
+                  <p className="text-[11px] text-orange-100 mt-1">
+                    Instantly connect with workers.
+                  </p>
+                </div>
+
+              </div>
+
             </div>
 
+            <div className="bg-white/10 border border-white/15 backdrop-blur-lg rounded-2xl px-5 py-4 shadow-lg hover:scale-[1.02] transition-all duration-300">
 
-            <div className="mb-2 relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                data-lpignore="true"
-                autoComplete="new-password"
-                value={form.password}
-                onChange={(e) => {
-                  setForm({ ...form, password: e.target.value });
-                  setPasswordError("");
-                  setCommonError("");
-                }}
-                className={`w-full bg-gray-100 px-4 py-3 rounded-lg outline-none focus:ring-2 ${passwordError
-                    ? "border border-red-500 focus:ring-red-200"
-                    : "focus:ring-gray-200"
-                  }`}
-              />
+              <div className="flex items-center gap-3">
 
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-3 cursor-pointer text-sm text-gray-600"
-              >
-                {showPassword ? "Hide" : "Show"}
-              </span>
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  🔒
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-sm">
+                    Trusted Platform
+                  </h3>
+
+                  <p className="text-[11px] text-orange-100 mt-1">
+                    Safe & verified employer accounts.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="relative md:absolute right-0 top-0 w-full md:w-[52%] h-full flex items-center justify-center px-6 md:px-12 py-10">
+
+        <div className="w-full max-w-sm">
+
+          {/* Mobile Logo */}
+          <div className="md:hidden flex justify-center mb-6">
+
+            <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center shadow-xl">
+              <span className="text-3xl text-white">⚒️</span>
+            </div>
+
+          </div>
+
+          {/* Heading */}
+          <div className="text-center mb-8">
+
+            <h2 className="text-3xl font-black text-gray-800">
+              Welcome Back
+            </h2>
+
+            <p className="text-sm text-gray-500 mt-2">
+              Login to continue
+            </p>
+
+          </div>
+
+          {/* FORM */}
+          <form onSubmit={handleLogin} className="space-y-5">
+
+            {/* EMAIL */}
+            <div>
+
+              <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                Email or Phone
+              </label>
+
+              <div className="relative">
+
+                <input
+                  type="text"
+                  placeholder="Enter email or phone"
+                  value={form.email}
+                  onChange={(e) => {
+                    setForm({ ...form, email: e.target.value });
+                    setEmailError("");
+                    setCommonError("");
+                  }}
+                  className={`w-full bg-white/90 px-4 py-3 rounded-2xl outline-none border shadow-sm transition-all duration-300
+                  ${emailError
+                      ? "border-red-400 focus:ring-2 focus:ring-red-200"
+                      : "border-gray-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-100"
+                    }`}
+                />
+
+                <span className="absolute right-4 top-3 text-gray-500">
+                  👤
+                </span>
+
+              </div>
+
+              {emailError && (
+                <p className="text-red-500 text-xs mt-2">
+                  {emailError}
+                </p>
+              )}
+
+            </div>
+
+            {/* PASSWORD */}
+            <div>
+
+              <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                Password
+              </label>
+
+              <div className="relative">
+
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter password"
+                  autoComplete="new-password"
+                  value={form.password}
+                  onChange={(e) => {
+                    setForm({ ...form, password: e.target.value });
+                    setPasswordError("");
+                    setCommonError("");
+                  }}
+                  className={`w-full bg-white/90 px-4 py-3 rounded-2xl outline-none border shadow-sm transition-all duration-300
+                  ${passwordError
+                      ? "border-red-400 focus:ring-2 focus:ring-red-200"
+                      : "border-gray-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-100"
+                    }`}
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-3 text-sm font-semibold text-orange-500"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+
+              </div>
 
               {passwordError && (
-                <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                <p className="text-red-500 text-xs mt-2">
+                  {passwordError}
+                </p>
               )}
+
             </div>
 
+            {/* ERROR */}
+            {commonError && (
+              <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-500">
+                {commonError}
+              </div>
+            )}
 
-            {commonError && <p className="text-red-500 text-sm mt-2">{commonError}</p>}
+            {/* FORGOT */}
+            <div className="flex justify-end">
 
+              <button
+                type="button"
+                onClick={() => navigate("/admin/forget-password")}
+                className="text-sm font-semibold text-orange-500 hover:underline"
+              >
+                Forgot Password?
+              </button>
 
-            <div
-              className="text-center mt-2 text-sm text-gray-900 mb-6 cursor-pointer hover:font-bold"
-              onClick={() => navigate("/admin/forget-password")}
-            >
-              Forgot Password?
             </div>
 
-
+            {/* BUTTON */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#fb923c] text-white py-3 rounded-lg font-semibold hover:font-bold transition disabled:opacity-60"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-400 text-white py-3 rounded-2xl font-bold shadow-lg hover:shadow-orange-200 hover:scale-[1.01] transition-all duration-300"
             >
               {loading ? "Logging in..." : "Login"}
             </button>
+
           </form>
 
+          {/* SOCIAL */}
+          <div className="mt-6">
 
-          <div className="flex justify-center gap-4 mt-4">
-            <div
-              onClick={handleGoogleLogin}
-              className="w-10 h-10 text-black font-bold flex items-center justify-center border rounded-lg cursor-pointer hover:bg-gray-100"
-            >
-              G
+            <div className="flex items-center gap-3 mb-5">
+              <div className="flex-1 h-[1px] bg-gray-200"></div>
+              <span className="text-[10px] font-bold text-gray-400 tracking-widest">
+                OR
+              </span>
+              <div className="flex-1 h-[1px] bg-gray-200"></div>
             </div>
 
+            <div className="flex justify-center gap-4">
 
-            <div className="w-10 h-10 text-black font-bold flex items-center justify-center border rounded-lg cursor-pointer hover:bg-gray-100">
-              f
+              <button
+                onClick={handleGoogleLogin}
+                className="w-11 h-11 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold"
+              >
+                G
+              </button>
+
+              <button className="w-11 h-11 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold">
+                f
+              </button>
+
+              <button className="w-11 h-11 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold">
+                Ø
+              </button>
+
+              <button className="w-11 h-11 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold">
+                in
+              </button>
+
             </div>
 
-
-            <div className="w-10 h-10 text-black font-bold flex items-center justify-center border rounded-lg cursor-pointer hover:bg-gray-100">
-              Ø
-            </div>
-
-
-            <div className="w-10 h-10 text-black font-bold flex items-center justify-center border rounded-lg cursor-pointer hover:bg-gray-100">
-              in
-            </div>
           </div>
-          <div className="mt-4 flex lg:hidden justify-center">
-            <button type="button"
+
+          {/* REGISTER */}
+          <div className="mt-6 text-center">
+
+            <span className="text-sm text-gray-500">
+              Don’t have an account?
+            </span>
+
+            <button
+              type="button"
               onClick={() => navigate("/Home")}
-              className="text-orange-500 font-semibold hover:underline"
+              className="ml-2 text-orange-500 font-bold hover:underline"
             >
               Register
             </button>
+
           </div>
+
         </div>
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 
